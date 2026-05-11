@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>라면 끓이기 시뮬레이션</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <h1>라면 끓이기 시뮬레이션</h1>
+        <p>단계대로 눌러서 라면을 완성해보세요.</p>
+      </header>
+
+      <section class="kitchen-hero">
+        <img src="./assets/ramen_shop_scene.png" alt="라면 가게 내부 이미지" />
+      </section>
+
+      <section class="card customer-card">
+        <h2>손님</h2>
+        <div class="customer-wrap">
+          <img id="customerImage" class="customer-image" src="./assets/customer_1.png" alt="손님 캐릭터 이미지" />
+          <div class="customer-meta">
+            <p id="customerName" class="customer-name">손님 #1</p>
+            <p id="orderText" class="order-text">손님 주문: -</p>
+            <p id="toppingOrderText" class="order-subtext">원하는 토핑: -</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card sim-card">
+        <h2>현재 상태</h2>
+        <div class="station">
+          <div class="pot-zone">
+            <img id="ramenPreview" class="ramen-preview" src="" alt="조리 중 라면 이미지" />
+            <p id="dropHint" class="drop-hint">도구를 냄비 위로 드래그해서 놓으세요.</p>
+          </div>
+          <div class="mid-column">
+            <div class="preference-box">
+              <h3>라면 설정</h3>
+              <p class="hint-text">맵기는 물/스프 양으로 자동 조절됩니다.</p>
+              <div class="choice-group">
+                <span class="choice-label">맵기</span>
+                <div id="spiceButtons" class="choice-buttons"></div>
+              </div>
+              <div class="choice-group">
+                <span class="choice-label">면 익힘</span>
+                <div id="textureButtons" class="choice-buttons"></div>
+              </div>
+              <div class="choice-group">
+                <span class="choice-label">면 종류</span>
+                <div id="noodleButtons" class="choice-buttons"></div>
+              </div>
+            </div>
+            <div class="steps-box mid-steps">
+              <h3>조리 단계</h3>
+              <ol id="stepList" class="step-list"></ol>
+            </div>
+          </div>
+          <div class="side-panel">
+            <div class="pot-controls">
+              <button id="startBtn" class="primary-btn" type="button">새 주문 받기</button>
+              <button id="fireBtn" class="dark-btn" type="button">불 켜기</button>
+              <button id="serveBtn" class="good-btn" type="button">완성 서빙</button>
+            </div>
+            <div class="tools-box">
+              <h3>조리도구</h3>
+              <div id="toolItems" class="tool-grid"></div>
+            </div>
+          </div>
+        </div>
+        <p id="statusText" class="status-text">냄비를 준비했어요. 아래에서 시작하세요.</p>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
